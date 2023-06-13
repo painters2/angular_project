@@ -1,0 +1,19 @@
+<div class="container">
+  <canvasjs-chart [options]="chartOptions" [styles]="{width: '100%', height:'360px'}"></canvasjs-chart>    
+</div>  
+<div class="col-50">
+
+  <mat-form-field>
+      <mat-select placeholder="select" formControlName="options">
+
+          <mat-option value="Monthly">
+              <i class="material-icons visibility" matSuffix></i>Monthly</mat-option>
+              <mat-option value="Quaterly">
+                <i class="material-icons visibility" matSuffix></i>Quaterly</mat-option>
+                <mat-option value="Yearly">
+                  <i class="material-icons visibility" matSuffix></i>Yearly</mat-option>
+      </mat-select>
+  </mat-form-field>
+  </div>
+
+

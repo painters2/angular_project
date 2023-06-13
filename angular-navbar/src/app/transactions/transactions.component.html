@@ -1,0 +1,135 @@
+<div class="container">
+    <div class="" style="width: 80%;">
+            <div class="row no-gutters">
+                <div class="col-12 display">
+                    <h1>Create Transactions</h1>
+                </div>
+
+
+                <div class="col-12 display">
+
+
+                    <form [formGroup]="addTransactionForm" (ngSubmit)="onSubmit()">
+                        <div class="row">
+                            <div class="col-25">
+                            <label for="categoryId">
+                                Category
+                            </label>
+                            </div>
+                            <div class="col-75">
+                                <mat-form-field>
+                                    <mat-select placeholder="select icon" formControlName="category">
+                                        <mat-option value="flight_land">
+                                            <i class="material-icons visibility" matSuffix></i>flight_land
+                                            <mat-icon>flight_land</mat-icon>
+                                        </mat-option>  
+                                        <mat-option value="motorcycle">
+                                            <i class="material-icons visibility" matSuffix></i>motorcycle
+                                            <mat-icon>motorcycle</mat-icon>
+                                        </mat-option>
+                                        <mat-option value="home">
+                                            <i class="material-icons visibility" matSuffix></i>home
+                                            <mat-icon>home</mat-icon>
+                                        </mat-option>
+                                        <mat-option value="devices">
+                                            <i class="material-icons visibility" matSuffix></i>devices
+                                            <mat-icon>devices</mat-icon>
+                                        </mat-option>
+                                        <mat-option value="gps_fixed">
+                                            <i class="material-icons visibility" matSuffix></i>gps_fixed
+                                            <mat-icon>gps_fixed</mat-icon>
+                                        </mat-option>
+                                        <mat-option value="lunch_dining">
+                                            <i class="material-icons visibility" matSuffix></i>lunch_dining
+                                            <mat-icon>lunch_dining</mat-icon>
+                                        </mat-option>
+                                        <mat-option value="airplane_ticket">
+                                            <i class="material-icons visibility" matSuffix></i>airplane_ticket
+                                            <mat-icon>airplane_ticket</mat-icon>
+                                        </mat-option>
+                                        <mat-option value="movie">
+                                            <i class="material-icons visibility" matSuffix></i>movie
+                                            <mat-icon>movie</mat-icon>
+                                        </mat-option>
+                                        <mat-option value="library_books">
+                                            <i class="material-icons visibility" matSuffix></i>library_books
+                                            <mat-icon>library_books</mat-icon>
+                                        </mat-option>
+                                        <mat-option value="shopping_basket">
+                                            <i class="material-icons visibility" matSuffix></i>shopping_basket
+                                            <mat-icon>shopping_basket</mat-icon>
+                                        </mat-option>
+                                        <mat-option value="tour">
+                                            <i class="material-icons visibility" matSuffix></i>tour
+                                            <mat-icon>tour</mat-icon>
+                                        </mat-option>
+                                        <mat-option value="card_giftcard">
+                                            <i class="material-icons visibility" matSuffix></i>card_giftcard
+                                            <mat-icon>card_giftcard</mat-icon>
+                                        </mat-option>
+                                    </mat-select>
+                                  </mat-form-field>
+                            
+                       </div>
+                        </div>
+                        <div class="amount row ht">
+                            <div class="col-25">
+                                <label for="amount">       Amount             </label>
+                            </div>
+                            <div class="col-75">
+                            <input id="amount" type="number" formControlName="amount" required="true">
+                       </div>
+                        </div>
+                        <div class="note row ht">
+                            <div class="col-25">
+                            <label for="note">
+                                Note
+                            </label>
+                            </div>
+                            <div class="col-75">
+                            <input id="note" type="text" formControlName="note" required="true">
+                        </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-25">
+                            <label for="date">
+                                Date
+                            </label>
+                            </div>
+                            <div class="col-75">
+                            <input id="date" type="date" formControlName="date" required="true">
+                        </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                        <button class="button" type="submit">Create</button>
+                    </div>
+                    </form>
+
+                </div>
+         
+
+        <div class="row">
+            <h2>Recent Transactions</h2>
+        </div>
+        <div class="row">
+            <table id="customers">
+                <thead>
+                    <th width="200px">Category</th>
+                    <th width="200px">Amount</th>
+                    <th width ="200px">Note</th>
+                    <th width="200px">Date</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let transaction of this.transactions">
+                        <td><mat-icon>{{transaction.category}}></mat-icon></td>
+                        <td>{{transaction.amount}}</td>
+                        <td>{{transaction.note}}</td>
+                        <td>{{transaction.date}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</div>

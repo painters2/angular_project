@@ -1,0 +1,137 @@
+<div class="container">
+    <div class="" style="width: 80%;">
+
+        <div class="row no-gutters">
+            <div class="col-12 display">
+                <h1>Categories</h1>
+            </div>
+
+            <form [formGroup]="addCategoryForm" (ngSubmit)="onSubmit()">
+                <div class="row">
+                    <div class="col-25">
+                        <label for="title">
+                            Title
+                        </label>
+                    </div>
+                    <div class="col-75">
+                        <input id="title" type="string" formControlName="title" required="true">
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label>
+                            Icon
+                        </label>
+                    </div>
+                    <div class="col-75">
+                        
+                          <mat-form-field>
+                            <mat-select placeholder="select icon" formControlName="icon">
+                                <!-- <mat-select-trigger>
+                                    <mat-option value="option">
+                                        <i class="material-icons visibility" matSuffix></i>flight_land
+                                    </mat-option>
+                                </mat-select-trigger> -->
+                               
+                                <mat-option value="flight_land">
+                                    <i class="material-icons visibility" matSuffix></i>flight_land
+                                    <mat-icon>flight_land</mat-icon>
+                                </mat-option>  
+                                <mat-option value="motorcycle">
+                                    <i class="material-icons visibility" matSuffix></i>motorcycle
+                                    <mat-icon>motorcycle</mat-icon>
+                                </mat-option>
+                                <mat-option value="devices">
+                                    <i class="material-icons visibility" matSuffix></i>devices
+                                    <mat-icon>devices</mat-icon>
+                                </mat-option>
+                                <mat-option value="gps_fixed">
+                                    <i class="material-icons visibility" matSuffix></i>gps_fixed
+                                    <mat-icon>gps_fixed</mat-icon>
+                                </mat-option>
+                                <mat-option value="home">
+                                    <i class="material-icons visibility" matSuffix></i>home
+                                    <mat-icon>home</mat-icon>
+                                </mat-option>
+                                <mat-option value="lunch_dining">
+                                    <i class="material-icons visibility" matSuffix></i>lunch_dining
+                                    <mat-icon>lunch_dining</mat-icon>
+                                </mat-option>
+                                <mat-option value="airplane_ticket">
+                                    <i class="material-icons visibility" matSuffix></i>airplane_ticket
+                                    <mat-icon>airplane_ticket</mat-icon>
+                                </mat-option>
+                                <mat-option value="movie">
+                                    <i class="material-icons visibility" matSuffix></i>movie
+                                    <mat-icon>movie</mat-icon>
+                                </mat-option>
+                                <mat-option value="library_books">
+                                    <i class="material-icons visibility" matSuffix></i>library_books
+                                    <mat-icon>library_books</mat-icon>
+                                </mat-option>
+                                <mat-option value="shopping_basket">
+                                    <i class="material-icons visibility" matSuffix></i>shopping_basket
+                                    <mat-icon>shopping_basket</mat-icon>
+                                </mat-option>
+                                <mat-option value="tour">
+                                    <i class="material-icons visibility" matSuffix></i>tour
+                                    <mat-icon>tour</mat-icon>
+                                </mat-option>
+                                <mat-option value="card_giftcard">
+                                    <i class="material-icons visibility" matSuffix></i>card_giftcard
+                                    <mat-icon>card_giftcard</mat-icon>
+                                </mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                          
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-25">
+                        <label for="note">
+                            Type
+                        </label>
+                    </div>
+                    <div class="col-75">
+                        <select name="category" id="category" formControlName="type" required="true">
+                            <option value="Expense">Expense</option>
+                            <option value="Income">Income</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                     <button class="button" type="submit">Create</button>
+                </div>
+
+            </form>
+
+
+        </div>
+
+
+        <div class="col-12 ">
+            <h2>Recent Transactions</h2>
+        </div>
+        <div class="col-12">
+            <table id="customers">
+                <thead>
+                    <th width="200px">Category Id</th>
+                    <th width="200px">Title</th>
+                    <th width="200px">Icon</th>
+                    <th width="200px">Type</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let transaction of this.category">
+                        <td>{{transaction.categoryId}}</td>
+                        <td>{{transaction.title}}</td>
+                        <td><mat-icon>{{transaction.icon}}</mat-icon></td>
+                        <td>{{transaction.type}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

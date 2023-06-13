@@ -1,0 +1,110 @@
+<div class="container">
+    <a>
+        <h1><mat-icon>price_change</mat-icon>Currency</h1>
+    </a><br>
+    <form [formGroup]="addSettingForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+        <div class="col-25">
+            <label>
+             Currency
+            </label>
+        </div>
+        <div class="col-50">
+
+            <mat-form-field>
+                <mat-select placeholder="Add Currency" formControlName="Currency">
+
+                    <mat-option value="Indian Rupee">
+                        <i class="material-icons visibility" matSuffix></i>Indian Rupee
+                        <mat-icon>₹</mat-icon>
+                    </mat-option>
+                    <mat-option value="American Dollar">
+                        <i class="material-icons visibility" matSuffix></i>American Dollar
+                        <mat-icon>INR</mat-icon>
+                    </mat-option>
+                    <mat-option value="Australian Dollar">
+                        <i class="material-icons visibility" matSuffix></i>Australian Dollar
+                        <mat-icon>$</mat-icon>
+                    </mat-option>
+                    <mat-option value="Canadian Dollar">
+                        <i class="material-icons visibility" matSuffix></i>Canadian Dollar
+                        <mat-icon>$</mat-icon>
+                    </mat-option>
+                    <mat-option value="Singapore Dollar">
+                        <i class="material-icons visibility" matSuffix></i>Singapore Dollar
+                        <mat-icon>$</mat-icon>
+                    </mat-option>
+                    <mat-option value="Euro">
+                        <i class="material-icons visibility" matSuffix></i>Euro
+                        <mat-icon>€</mat-icon>
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+          
+        </div>
+        <br>
+        <br>
+        <div class="row">
+            <button class="button" type="submit">Select</button>
+        </div>
+    </div>
+</form>
+    <hr>
+    <a><h1><mat-icon>security</mat-icon>Security</h1></a><br>
+    <div class="row">
+        <div class="col-25">
+            <label for="title">
+                Chnage Password
+            </label>
+        </div>
+        <div class="col-75">
+            <input id="Password" type="string" formControlName="Password" required="true">
+        </div>
+        <br>
+        <div class="row">
+            <button class="button" type="submit">Submit</button>
+        </div>
+    </div>
+    <hr>
+    <a><h1><mat-icon>account_circle</mat-icon>Account</h1></a><br>
+    <div class="row">
+            <div class="col-25">
+                <label for="title">
+                    First Name
+                </label>
+            </div>
+            <div class="col-75">
+                <input id="name" type="string" formControlName="name" required="true">
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label>
+                    Last Name
+                </label>
+            </div>
+            <div class="col-75">
+                <input id="name" type="string" formControlName="name" required="true">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-25">
+                <label>
+                    Email
+                </label>
+            </div>
+            <div class="col-75">
+                <input id="email" type="string" formControlName="email" required="true">
+            </div>
+            <br>
+            <div class="row">
+                <button class="button" type="submit">Submit</button>
+                
+            </div>
+            
+        </div>
+        
+    
+   

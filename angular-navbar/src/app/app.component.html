@@ -1,0 +1,31 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button (click)="drawer.toggle();">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <h1 style="margin-top:15px;">Expense Tracker</h1>
+  <div style="position: absolute; right: 10px; margin-top: 3vh;">
+    <a mat-button routerLink="signup">Signup</a>
+    <a mat-button routerLink="home">Home</a>
+  </div>
+  
+</mat-toolbar>
+<mat-drawer-container autosize>
+  <mat-drawer #drawer opened="true" mode="side" id="sidebar">
+    <mat-nav-list>
+      <h3 style="margin:5%"><b><u>GENERAL</u></b></h3>
+      <a mat-list-item routerLink="dashboard"><mat-icon>dashboard</mat-icon>Dasboard</a>
+      <a mat-list-item routerLink="categories"><mat-icon>view_quilt</mat-icon>Categories</a>
+      <a mat-list-item routerLink="transactions"><mat-icon>sync_alt</mat-icon>Transactions</a>
+      <h3 style="margin:5%"><b><u>EXTRAS</u></b></h3>
+      <a mat-list-item routerLink="reports"><mat-icon>equalizer</mat-icon>Reports</a>
+      <a mat-list-item routerLink="settings"><mat-icon>settings_applications</mat-icon>Settings</a>
+    </mat-nav-list>
+</mat-drawer>
+<mat-drawer-content>
+  
+    <div>
+      <router-outlet>
+      </router-outlet>
+</div>
+</mat-drawer-content>
+</mat-drawer-container>
